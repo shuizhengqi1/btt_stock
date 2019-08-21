@@ -13,10 +13,7 @@ app.get('/stock', (req, response) => {
         if (body != null) {
             var result = iconv.decode(body, 'GBK')
             var resultList = result.split(',')
-            response.send({
-                count: resultList[1],
-                percent: resultList[3]
-            })
+            response.send(resultList[1]+",涨幅："+resultList[3])
 
         }
     })
